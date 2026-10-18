@@ -1,0 +1,115 @@
+/* ===== Warna brand Queeny Store ===== */
+:root {
+  --navy: #101D43;
+  --blue: #244A8F;
+  --icy: #8DADEB;
+  --silver: #C7CEDB;
+  --pearl: #F8F7F4;
+  --display: "Cormorant Garamond", Georgia, serif;
+  --body: "Nunito Sans", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 4rem; }
+
+body {
+  font-family: var(--body);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: var(--navy);
+  background: var(--pearl);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+a:focus-visible { outline: 3px solid var(--icy); outline-offset: 3px; }
+
+h1, h2 { font-family: var(--display); line-height: 1.1; }
+h2 { font-size: 2.2rem; margin-bottom: 0.75rem; }
+p + p { margin-top: 0.9rem; }
+
+/* ===== Header ===== */
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 0.5rem 1.5rem;
+  padding: 0.8rem 1.5rem;
+  background: var(--pearl);
+  border-bottom: 1px solid var(--silver);
+}
+.wordmark {
+  font-family: var(--display); font-size: 1.6rem; font-weight: 700;
+  color: var(--blue); text-decoration: none;
+}
+.site-header nav { display: flex; gap: 1.25rem; }
+.site-header nav a { color: var(--navy); text-decoration: none; font-weight: 600; }
+.site-header nav a:hover { color: var(--blue); text-decoration: underline; }
+
+/* ===== Tombol ===== */
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+.btn {
+  display: inline-block; padding: 0.7rem 1.3rem; border-radius: 999px;
+  font-weight: 600; text-decoration: none; border: 2px solid transparent;
+}
+.btn-light { background: var(--icy); color: var(--navy); }
+.btn-light:hover { background: var(--pearl); }
+.btn-outline { border-color: var(--silver); color: var(--pearl); }
+.btn-outline:hover { background: rgba(248, 247, 244, 0.12); }
+
+/* ===== Hero ===== */
+.hero {
+  display: grid; grid-template-columns: 1.2fr 1fr; align-items: center; gap: 2rem;
+  padding: 4rem 1.5rem; background: var(--navy); color: var(--pearl);
+}
+.hero-text { max-width: 36rem; margin-left: auto; }
+.hero h1 { font-size: clamp(2.4rem, 5.5vw, 3.8rem); font-weight: 700; margin-bottom: 1rem; }
+.hero p { color: var(--silver); }
+.hero-mascot { width: min(100%, 380px); margin-right: auto; }
+
+/* ===== Bagian umum ===== */
+.section {
+  max-width: 62rem; margin: 0 auto; padding: 4.5rem 1.5rem;
+}
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+.note { color: var(--blue); font-weight: 600; }
+
+/* Daftar platform */
+.platform-list { list-style: none; padding: 0; border-top: 2px solid var(--blue); }
+.platform-list li {
+  padding: 0.75rem 0; border-bottom: 1px solid var(--silver);
+  font-weight: 600; font-size: 1.1rem;
+}
+
+/* Tentang */
+.about { align-items: center; }
+.logo-panel {
+  background: #fff; border: 1px solid var(--silver); border-radius: 1.25rem;
+  padding: 1.5rem; max-width: 22rem;
+}
+
+/* ===== Kontak ===== */
+.contact {
+  display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 2.5rem;
+  padding: 4rem 1.5rem; background: var(--navy); color: var(--pearl);
+  justify-content: center;
+}
+.contact img { width: 220px; }
+.contact p { color: var(--silver); }
+.contact .phone { color: var(--pearl); font-weight: 600; margin-top: 0.9rem; }
+
+/* ===== Footer ===== */
+.site-footer {
+  padding: 1.5rem; text-align: center; font-size: 0.95rem;
+  background: var(--pearl); border-top: 1px solid var(--silver);
+}
+
+/* ===== Layar kecil ===== */
+@media (max-width: 760px) {
+  .hero, .split, .contact { grid-template-columns: 1fr; }
+  .hero { padding: 2.5rem 1.25rem; text-align: left; }
+  .hero-text { margin: 0; }
+  .hero-mascot { margin: 0 auto; width: min(75%, 300px); order: -1; }
+  .section { padding: 3rem 1.25rem; }
+  .split { gap: 1.75rem; }
+  .contact img { width: 160px; margin: 0 auto; }
+}
