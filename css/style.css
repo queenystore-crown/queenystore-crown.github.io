@@ -96,6 +96,8 @@ p + p { margin-top: 0.9rem; }
 .contact img { width: 220px; }
 .contact p { color: var(--silver); }
 .contact .phone { color: var(--pearl); font-weight: 600; margin-top: 0.9rem; }
+.contact .email { color: var(--pearl); margin-top: 0.25rem; }
+.contact .email a { color: var(--icy); }
 
 /* ===== Footer ===== */
 .site-footer {
