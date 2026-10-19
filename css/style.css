@@ -107,6 +107,14 @@ p + p { margin-top: 0.9rem; }
 
 /* ===== Layar kecil ===== */
 @media (max-width: 760px) {
+  /* Menu: boleh turun ke baris kedua supaya tidak terpotong */
+.site-header nav { flex-wrap: wrap; gap: 0.25rem 1.1rem; }
+
+@media (max-width: 760px) {
+  .site-header { position: static; padding: 0.75rem 1.25rem; }
+  .site-header nav { font-size: 0.98rem; }
+  .site-header nav a { padding: 0.4rem 0; }
+}
   .hero, .split, .contact { grid-template-columns: 1fr; }
   .hero { padding: 2.5rem 1.25rem; text-align: left; }
   .hero-text { margin: 0; }
