@@ -1,0 +1,38 @@
+/* Gaya khusus halaman Partnership. Warna dan huruf memakai variabel dari style.css */
+
+.site-header nav a[aria-current="page"] { color: var(--blue); text-decoration: underline; }
+
+.page-intro {
+  max-width: 62rem; margin: 0 auto; padding: 3.5rem 1.5rem 1rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+}
+.page-intro h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); }
+.page-intro p { max-width: 38rem; margin-top: 0.75rem; }
+.page-intro img { width: 200px; height: auto; flex-shrink: 0; }
+
+/* Dua jalur: reseller dan supplier */
+.paths {
+  max-width: 62rem; margin: 0 auto; padding: 2.5rem 1.5rem;
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.path { padding: 0 2rem; }
+.path:first-child { padding-left: 0; border-right: 1px solid var(--silver); }
+.path:last-child { padding-right: 0; }
+
+.btn-blue { background: var(--blue); color: var(--pearl); }
+.btn-blue:hover { background: var(--navy); }
+.btn-ghost { border-color: var(--blue); color: var(--blue); }
+.btn-ghost:hover { background: rgba(36, 74, 143, 0.08); }
+
+/* Sumber produk */
+.source { max-width: 62rem; margin: 0 auto; padding: 1rem 1.5rem 4rem; }
+.source-text { max-width: 44rem; border-left: 4px solid var(--icy); padding-left: 1.25rem; }
+
+@media (max-width: 760px) {
+  .page-intro { flex-direction: column-reverse; align-items: flex-start; padding: 2.5rem 1.25rem 0.5rem; }
+  .page-intro img { width: 150px; }
+  .paths { grid-template-columns: 1fr; padding: 2rem 1.25rem; }
+  .path, .path:first-child, .path:last-child { padding: 0 0 2rem; border-right: 0; }
+  .path:first-child { border-bottom: 1px solid var(--silver); margin-bottom: 2rem; }
+  .source { padding: 0.5rem 1.25rem 3rem; }
+}
