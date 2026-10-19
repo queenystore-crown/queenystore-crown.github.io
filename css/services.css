@@ -1,0 +1,26 @@
+/* Gaya khusus halaman Layanan. Warna dan huruf memakai variabel dari style.css */
+
+.site-header nav a[aria-current="page"] { color: var(--blue); text-decoration: underline; }
+
+.page-intro { max-width: 62rem; margin: 0 auto; padding: 3.5rem 1.5rem 0; }
+.page-intro h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); }
+.page-intro p { max-width: 38rem; margin-top: 0.75rem; }
+
+/* Pita putih di antara bagian untuk memberi jeda */
+.tint { background: #fff; border-top: 1px solid var(--silver); border-bottom: 1px solid var(--silver); }
+
+/* Daftar dua kolom untuk produk yang banyak */
+.platform-list.two-col { columns: 2; column-gap: 2rem; }
+.platform-list.two-col li { break-inside: avoid; }
+
+/* Ajakan memesan */
+.cta { background: var(--navy); color: var(--pearl); padding: 4rem 1.5rem; text-align: center; }
+.cta h2 { font-size: 2.4rem; }
+.cta p { color: var(--silver); max-width: 34rem; margin: 0.75rem auto 0; }
+.cta .actions { justify-content: center; }
+
+@media (max-width: 760px) {
+  .page-intro { padding: 2.5rem 1.25rem 0; }
+  .platform-list.two-col { columns: 1; }
+  .cta { padding: 3rem 1.25rem; }
+}
