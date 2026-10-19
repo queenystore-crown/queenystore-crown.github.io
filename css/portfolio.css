@@ -1,0 +1,33 @@
+/* Gaya khusus halaman Portofolio. Warna dan huruf memakai variabel dari style.css */
+
+.site-header nav a[aria-current="page"] { color: var(--blue); text-decoration: underline; }
+
+.page-intro { max-width: 62rem; margin: 0 auto; padding: 3.5rem 1.5rem 1rem; }
+.page-intro h1 { font-size: clamp(2.4rem, 5vw, 3.4rem); }
+.page-intro p { max-width: 40rem; margin-top: 0.75rem; }
+
+.featured { max-width: 62rem; margin: 0 auto; padding: 1.5rem 1.5rem 0; }
+.featured .poster { max-width: 34rem; }
+
+.gallery-group { max-width: 62rem; margin: 0 auto; padding: 2.5rem 1.5rem 1rem; }
+
+.gallery {
+  list-style: none; padding: 0;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem;
+}
+
+.poster {
+  display: block; overflow: hidden;
+  background: #fff; border: 1px solid var(--silver); border-radius: 1rem;
+  color: var(--navy); text-decoration: none;
+}
+.poster:hover { border-color: var(--blue); }
+.poster:focus-visible { outline: 3px solid var(--icy); outline-offset: 3px; }
+.poster img { width: 100%; height: auto; }
+.poster span { display: block; padding: 0.7rem 1rem; font-weight: 600; }
+
+@media (max-width: 760px) {
+  .page-intro { padding: 2.5rem 1.25rem 0.5rem; }
+  .featured, .gallery-group { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .gallery { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 0.9rem; }
+}
