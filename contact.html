@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak | Queeny Store</title>
+  <meta name="description" content="Hubungi admin Queeny Store lewat WhatsApp, email, atau formulir pesan. Tanya produk, layanan SMM Queen, dan kerja sama.">
+  <meta name="theme-color" content="#101D43">
+  <meta property="og:title" content="Kontak | Queeny Store">
+  <meta property="og:description" content="Hubungi admin Queeny Store.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/inner.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <a class="wordmark" href="index.html">Queeny Store</a>
+    <nav aria-label="Menu utama">
+      <a href="services.html">Layanan</a>
+      <a href="portfolio.html">Portofolio</a>
+      <a href="partnership.html">Partnership</a>
+      <a href="about.html">Tentang</a>
+      <a href="contact.html" aria-current="page">Kontak</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-intro">
+      <h1>Kontak</h1>
+      <p>Admin siap menjawab pertanyaan dan menerima pesanan. Pilih cara yang paling nyaman untukmu.</p>
+    </section>
+
+    <section class="section split">
+      <div>
+        <h2>Hubungi langsung</h2>
+        <ul class="contact-list">
+          <li><strong>WhatsApp admin</strong><a href="https://wa.me/6282129471479" target="_blank" rel="noopener">0821-2947-1479</a></li>
+          <li><strong>Email</strong><a href="mailto:queenystore.crown@gmail.com">queenystore.crown@gmail.com</a></li>
+          <li><strong>WhatsApp Channel</strong><a href="https://whatsapp.com/channel/0029Vb8WDUM1HspxHZ1Gtm0l" target="_blank" rel="noopener">Ikuti channel</a></li>
+        </ul>
+        <img class="mascot-small" src="assets/mascot/senang-qieeny.png" alt="Maskot Queeny Store tersenyum senang" width="180" height="180" loading="lazy">
+      </div>
+
+      <div>
+        <h2>Kirim pesan</h2>
+        <p>Isi formulir, lalu pesanmu terbuka di WhatsApp dan tinggal kamu kirim ke admin. Data tidak disimpan di website ini.</p>
+        <form id="pesan" class="msg-form">
+          <label for="nama">Nama</label>
+          <input id="nama" name="nama" type="text" required autocomplete="name">
+
+          <label for="minat">Yang ditanyakan</label>
+          <select id="minat" name="minat">
+            <option>Layanan SMM Queen</option>
+            <option>Produk digital premium</option>
+            <option>Top-up game atau pulsa</option>
+            <option>Kerja sama</option>
+            <option>Lainnya</option>
+          </select>
+
+          <label for="isi">Pesan</label>
+          <textarea id="isi" name="isi" rows="4" required></textarea>
+
+          <button class="btn btn-blue" type="submit">Buka di WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Queeny Store. SMM Queen adalah layanan di bawah Queeny Store.</p>
+  </footer>
+
+  <script>
+    // Menyusun pesan lalu membukanya di WhatsApp admin. Tidak ada data yang dikirim ke server.
+    document.getElementById("pesan").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var nama = document.getElementById("nama").value.trim();
+      var minat = document.getElementById("minat").value;
+      var isi = document.getElementById("isi").value.trim();
+      var teks = "Halo Queeny Store, saya " + nama + ".\nTopik: " + minat + "\n" + isi;
+      window.open("https://wa.me/6282129471479?text=" + encodeURIComponent(teks), "_blank", "noopener");
+    });
+  </script>
+
+</body>
+</html>
