@@ -123,3 +123,46 @@ p + p { margin-top: 0.9rem; }
   .split { gap: 1.75rem; }
   .contact img { width: 160px; margin: 0 auto; }
 }
+
+/* ===== Menu sidebar (HP) ===== */
+.menu-toggle, .menu-overlay { display: none; }
+
+@media (max-width: 760px) {
+  .site-header { position: sticky; flex-wrap: nowrap; padding: 0.7rem 1.25rem; }
+
+  .js-menu .menu-toggle {
+    display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
+    position: relative; z-index: 40; width: 44px; height: 44px; padding: 0 10px;
+    background: none; border: 1px solid var(--silver); border-radius: 0.6rem; cursor: pointer;
+  }
+  .menu-toggle span { display: block; height: 2px; background: var(--navy); border-radius: 2px; transition: transform 0.25s, opacity 0.25s; }
+  .menu-open .menu-toggle span { background: var(--pearl); }
+  .menu-open .menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-open .menu-toggle span:nth-child(2) { opacity: 0; }
+  .menu-open .menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .js-menu .site-header nav {
+    position: fixed; top: 0; right: 0; bottom: 0; z-index: 30;
+    width: min(78vw, 300px); padding: 4.5rem 1.5rem 1.5rem;
+    flex-direction: column; flex-wrap: nowrap; gap: 0;
+    background: var(--navy);
+    transform: translateX(100%); visibility: hidden;
+    transition: transform 0.25s ease, visibility 0s linear 0.25s;
+  }
+  .menu-open .site-header nav { transform: none; visibility: visible; transition: transform 0.25s ease; }
+
+  .js-menu .site-header nav a {
+    color: var(--pearl); padding: 0.85rem 0; font-size: 1.1rem; text-decoration: none;
+    border-bottom: 1px solid rgba(199, 206, 219, 0.25);
+  }
+  .js-menu .site-header nav a:hover { color: var(--icy); }
+  .js-menu .site-header nav a[aria-current="page"] { color: var(--icy); text-decoration: none; }
+
+  .menu-overlay {
+    display: block; position: fixed; inset: 0; z-index: 9;
+    background: rgba(16, 29, 67, 0.55); opacity: 0; visibility: hidden;
+    transition: opacity 0.25s, visibility 0s linear 0.25s;
+  }
+  .menu-open .menu-overlay { opacity: 1; visibility: visible; transition: opacity 0.25s; }
+  .menu-open body { overflow: hidden; }
+}
