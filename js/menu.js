@@ -25,6 +25,16 @@
   overlay.className = "menu-overlay";
   document.body.appendChild(overlay);
 
+
+  // Tombol WhatsApp melayang agar admin selalu mudah dihubungi
+  var wa = document.createElement("a");
+  wa.className = "wa-float";
+  wa.href = "https://wa.me/6282129471479";
+  wa.target = "_blank";
+  wa.rel = "noopener";
+  wa.textContent = "Chat admin";
+  document.body.appendChild(wa);
+
   function isOpen() {
     return root.classList.contains("menu-open");
   }
