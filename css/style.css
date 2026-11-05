@@ -8,6 +8,7 @@
 }
 * { box-sizing: border-box; margin: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+html { overflow-x: hidden; overflow-x: clip; } /* cegah halaman bergeser ke samping */
 body { font-family: var(--body); font-size: 1.0625rem; line-height: 1.7; color: var(--navy); background: var(--pearl); }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--blue); }
@@ -146,7 +147,7 @@ p + p { margin-top: 0.9rem; }
   .contact img { width: 150px; margin: 0 auto; }
   .site-footer { padding-bottom: 5rem; }
 
-  .site-header { flex-wrap: nowrap; padding: 0.7rem 1.25rem; }
+  .site-header { flex-wrap: nowrap; padding: 0.7rem 1.25rem; background: var(--pearl); backdrop-filter: none; }
   .js-menu .menu-toggle {
     display: inline-flex; flex-direction: column; justify-content: center; gap: 5px;
     position: relative; z-index: 40; width: 44px; height: 44px; padding: 0 10px;
@@ -176,7 +177,7 @@ p + p { margin-top: 0.9rem; }
     transition: opacity 0.25s, visibility 0s linear 0.25s;
   }
   .menu-open .menu-overlay { opacity: 1; visibility: visible; transition: opacity 0.25s; }
-  .menu-open body { overflow: hidden; }
+  html.menu-open { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
