@@ -46,9 +46,9 @@
     if (!moveFocus) return;
     if (open) {
       var first = nav.querySelector("a");
-      if (first) first.focus();
+      if (first) first.focus({ preventScroll: true });
     } else {
-      btn.focus();
+      btn.focus({ preventScroll: true });
     }
   }
 
